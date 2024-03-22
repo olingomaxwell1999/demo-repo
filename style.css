@@ -1,0 +1,121 @@
+body{
+    height: 1000px;
+    /* overflow: hidden; */
+}
+
+.image-area{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.text-area{
+    display: flex;
+    gap: 20px;
+    /* flex-wrap: wrap; */
+    /* flex-wrap: wrap; */
+}
+
+.fixed{
+    height: 50px;
+    width: 100%;
+    background: purple;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.static{
+    height: 200px;
+    width: 100%;
+    background: yellow;
+    position: static;
+}
+
+.relative{
+    height: 300px;
+    width: 100%;
+    background: red;
+    position: relative;
+}
+
+.absolute{
+    height: 200px;
+    width: 50%;
+    background: black;
+    position: absolute;
+    right: 0;
+    top: 300px;
+}
+
+.sticky{
+    height: 300px;
+    width: 100%;
+    background: blue;
+    position: sticky;
+    left: 0;
+    bottom: 0; 
+}
+
+.container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
+    overflow: hidden;
+}
+
+.container .box{
+    width: 100%;
+}
+
+.container .box .image img{
+    width: 100%;
+}
+
+.animation-area{
+    height: 400px;
+    width: 100%;
+}
+
+.animation-area .animation-box{
+    height: 400px;
+    width: 400px;
+    background: orange;
+    animation: sliding 1s ease-in-out 1s infinite;
+}
+
+@keyframes sliding {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .container {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media only screen and (max-width: 528px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
